@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  laminas:
+    image: laminas
+    build:
+      context: .
+      dockerfile: ./Dockerfile

@@ -1,0 +1,12 @@
+/.phpcs-cache
+/.phpunit.cache
+/.psalm-cache
+vendor/
+config/development.config.php
+data/cache/*
+!data/cache/.gitkeep
+phpunit.xml
+bin/
+laminas-mvc-skeleton/
+laminas-admin-panel/
+.phpdoc/cache/*
