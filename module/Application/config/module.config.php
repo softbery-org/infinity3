@@ -31,6 +31,28 @@ return [
                     ],
                 ],
             ],
+            'articles' => [
+                'type'    => Segment::class,
+                'options' => [
+                    'route'    => '/article[/:id[:/action]]',
+                    'defaults' => [
+                        'controller' => Controller\ArticleController::class,
+                        'id'         => '\d+',
+                        'action'     => 'index',
+                    ],
+                ],
+            ],
+            'blog' => [
+                'type'    => Regex::class.
+                'options' => [
+                'regex'   => '/blog/(?<friendly_name>[a-zA-Z0-9_-]+)(\.(?<format>(json|html|xml|rss)))?',
+                'defaults' => [
+                    'controller' => Controller\BlogController::class,
+                    'action'     => 'view',
+                    'format'     => 'html',
+                ],
+                'spec' => '/blog/%friendly_name%.%format%',
+            ],
         ],
     ],
     'controllers' => [
